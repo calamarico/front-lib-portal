@@ -1,9 +1,9 @@
-import http from "../http-common";
+import http from "./../http-common";
 
-class TutorialDataService {
-  // getAll() {
-  //   return http.get("/api");
-  // }
+class BooksDataService {
+  search(text) {
+    return http.get(`/search.json?q=${text.replace(/ /g,"+")}`);
+  }
 }
 
-export default new TutorialDataService();
+export default new BooksDataService();
