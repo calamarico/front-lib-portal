@@ -1,5 +1,5 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import booksReducer from '../redux/booksReducer';
+import booksReducer from '../redux/searchReducer';
 
 export const store = configureStore({
   reducer: {
