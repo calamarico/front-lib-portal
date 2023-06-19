@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import BooksDataService from "../services/booksDataService";
 
-export const fetchSearch = createAsyncThunk<string[], string, { rejectValue: string }>(
+export const fetchSearch = createAsyncThunk<BooksDataI, string, { rejectValue: string }>(
   "books/fetchSearch",
   async (text, _api) => {
     try {
@@ -12,13 +12,17 @@ export const fetchSearch = createAsyncThunk<string[], string, { rejectValue: str
     }
   }
 );
+
+interface BooksDataI {
+  numFound?: BigInteger;
+}
 interface SearchState {
-  data: string[];
+  data: BooksDataI;
   loading: boolean;
   error: string | null;
 }
 const initialState: SearchState = {
-  data: [],
+  data: {},
   loading: false,
   error: null,
 };
