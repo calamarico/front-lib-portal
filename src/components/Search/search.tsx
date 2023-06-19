@@ -28,7 +28,9 @@ const Search = () => {
       </Styles.SearchInput>
       { total && total > 0 &&
         <Styles.SearchResultList>
-          { results?.slice(0, 4).map(({ title, author_name }) => <BookListItem title={title} author_name={author_name} /> ) }
+          { results?.slice(0, 4).map(({ title, author_name }) =>
+              <BookListItem key={title} title={title} author_name={author_name} />
+          )}
         </Styles.SearchResultList>
       }
     </Styles.SearchContainer>

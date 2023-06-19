@@ -13,7 +13,7 @@ export const fetchSearch = createAsyncThunk<BooksDataI, string, { rejectValue: s
   }
 );
 
-interface BookItemI {
+export interface BookItemI {
   title?: string;
   author_name?: string;
 }
@@ -36,6 +36,7 @@ export const searchSlice = createSlice({
   initialState,
   reducers: {
     reset: (state) => {
+      BooksDataService.abort();
       return initialState;
     }
   },

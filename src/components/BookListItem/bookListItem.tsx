@@ -1,17 +1,8 @@
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { AppDispatch } from '../../app/store';
-import { fetchSearch } from '../../redux/searchReducer';
-import { accountTypesSelector } from '../../redux/booksSelector';
+import { BookItemI } from '../../redux/searchReducer';
 import * as Styles from './styles';
-import { ItemTitle, ItemContainer } from './styles';
 
-interface ItemPropsI {
-  title?: string;
-  author_name?: string;
-}
-
-const BookListItem = ({title, author_name}: ItemPropsI) => {
+const BookListItem = ({title, author_name}: BookItemI) => {
   return (
     <Styles.ItemContainer>
       <Styles.ItemTitle>
